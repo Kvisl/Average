@@ -87,10 +87,10 @@ cool_reviewer.courses_attached += ['Python', 'Git']
 cool_reviewer1 = Reviewer('Bill', 'Rum')
 cool_reviewer1.courses_attached += ['Python', 'Git']
 
-in_lecturer = Lecturer('Any', 'Random')
-in_lecturer.courses_in_progress += ['Python', 'Git']
-in_lecturer1 = Lecturer('Eny', 'Dom')
-in_lecturer1.courses_in_progress += ['Python', 'Git']
+an_lecturer = Lecturer('Any', 'Random')
+an_lecturer.courses_in_progress += ['Python', 'Git']
+an_lecturer1 = Lecturer('Eny', 'Dom')
+an_lecturer1.courses_in_progress += ['Python', 'Git']
 
 cool_reviewer.rate_hw(best_student, 'Python', 10)
 cool_reviewer.rate_hw(best_student, 'Python', 6)
@@ -100,16 +100,16 @@ cool_reviewer1.rate_hw(best_student1, 'Python', 10)
 cool_reviewer1.rate_hw(best_student1, 'Python', 8)
 
 
-best_student.rate_lecturer(in_lecturer, 'Python', 10)
-best_student.rate_lecturer(in_lecturer, 'Python', 8)
-best_student.rate_lecturer(in_lecturer, 'Python', 9)
-best_student1.rate_lecturer(in_lecturer1, 'Python', 10)
-best_student1.rate_lecturer(in_lecturer1, 'Python', 7)
-best_student1.rate_lecturer(in_lecturer1, 'Python', 8)
+best_student.rate_lecturer(an_lecturer, 'Python', 10)
+best_student.rate_lecturer(an_lecturer, 'Python', 8)
+best_student.rate_lecturer(an_lecturer, 'Python', 9)
+best_student1.rate_lecturer(an_lecturer1, 'Python', 10)
+best_student1.rate_lecturer(an_lecturer1, 'Python', 7)
+best_student1.rate_lecturer(an_lecturer1, 'Python', 8)
 
 
 students = [best_student, best_student1]
-lecturers = [in_lecturer, in_lecturer1]
+lecturers = [an_lecturer, an_lecturer1]
 
 
 def average_grade_stu(students, course):
@@ -135,12 +135,12 @@ def average_grade_lec(lecturers, course):
 
 print(f'Reviewer:\n{cool_reviewer}')
 print()
-print(f'Lecturer:\n{in_lecturer}')
+print(f'Lecturer:\n{an_lecturer}')
 print()
 print(f'Student:\n{best_student}')
 print()
-print(in_lecturer1._average_grade() > in_lecturer._average_grade())
-print(best_student1._average_grade() > best_student._average_grade())
+print('Cравнение лекторов по средней оценке: {} '.format(an_lecturer1._average_grade() > an_lecturer._average_grade()))
+print('Cравнение студентов по средней оценке: {} '.format(best_student1._average_grade() > best_student._average_grade()))
 print()
 print("Средняя оценка всех студентов за курс: {}".format(average_grade_stu(students, 'Python')))
 print("Средняя оценка всех лекторов за курс: {}".format(average_grade_lec(lecturers, 'Python')))
