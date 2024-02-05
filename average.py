@@ -133,14 +133,14 @@ def average_grade_lec(lecturers, course):
             return result
 
 
-print(cool_reviewer)
+print(f'Reviewer:\n{cool_reviewer}')
 print()
-print(in_lecturer)
+print(f'Lecturer:\n{in_lecturer}')
 print()
-print(best_student)
+print(f'Student:\n{best_student}')
 print()
 print(in_lecturer1._average_grade() > in_lecturer._average_grade())
 print(best_student1._average_grade() > best_student._average_grade())
 print()
-print(average_grade_stu(students, 'Python'))
-print(average_grade_lec(lecturers, 'Python'))
+print("Средняя оценка всех студентов за курс: {}".format(average_grade_stu(students, 'Python')))
+print("Средняя оценка всех лекторов за курс: {}".format(average_grade_lec(lecturers, 'Python')))
