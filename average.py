@@ -24,7 +24,7 @@ class Student:
     def __str__(self):
         in_progress = ', '.join(self.courses_in_progress)
         end_course = ', '.join(self.finished_courses)
-        return (f'Имя: {self.name}\nФамилия: {self.surname}\nСредняя оценка за домашние: {self._average_grade()}'
+        return (f'Имя: {self.name}\nФамилия: {self.surname}\nСредняя оценка за домашние задание: {self._average_grade()}'
                 f'\nКурсы в процессе изучения: {in_progress}\nЗавершенные курсы: {end_course}')
 
     def __gt__(self, other):
@@ -76,26 +76,26 @@ class Reviewer(Mentor):
 best_student = Student('Ruoy', 'Eman', 'your_gender')
 best_student.courses_in_progress += ['Python', 'Git']
 best_student.finished_courses += ['Введение в программирование']
-best_student.courses_attached += ['Python', 'Git']
+best_student.courses_attached += ['Python']
 best_student1 = Student('Tom', 'Jerry', 'Cat')
 best_student1.courses_in_progress += ['Python', 'Git']
 best_student1.finished_courses += ['Введение в программирование']
-best_student1.courses_attached += ['Python', 'Git']
+best_student1.courses_attached += ['Python']
 
 cool_reviewer = Reviewer('Some', 'Buddy')
-cool_reviewer.courses_attached += ['Python', 'Git']
+cool_reviewer.courses_attached += ['Python']
 cool_reviewer1 = Reviewer('Bill', 'Rum')
-cool_reviewer1.courses_attached += ['Python', 'Git']
+cool_reviewer1.courses_attached += ['Python']
 
 an_lecturer = Lecturer('Any', 'Random')
-an_lecturer.courses_in_progress += ['Python', 'Git']
+an_lecturer.courses_in_progress += ['Python']
 an_lecturer1 = Lecturer('Eny', 'Dom')
-an_lecturer1.courses_in_progress += ['Python', 'Git']
+an_lecturer1.courses_in_progress += ['Python']
 
 cool_reviewer.rate_hw(best_student, 'Python', 10)
 cool_reviewer.rate_hw(best_student, 'Python', 6)
 cool_reviewer.rate_hw(best_student, 'Python', 10)
-cool_reviewer1.rate_hw(best_student1,'Python', 9)
+cool_reviewer1.rate_hw(best_student1, 'Python', 9)
 cool_reviewer1.rate_hw(best_student1, 'Python', 10)
 cool_reviewer1.rate_hw(best_student1, 'Python', 8)
 
@@ -142,5 +142,5 @@ print()
 print('Cравнение лекторов по средней оценке: {}'.format(an_lecturer1._average_grade() > an_lecturer._average_grade()))
 print('Cравнение студентов по средней оценке: {}'.format(best_student1._average_grade() > best_student._average_grade()))
 print()
-print('Средняя оценка всех студентов за курс: {}'.format(average_grade_stu(students, 'Python')))
-print('Средняя оценка всех лекторов за курс: {}'.format(average_grade_lec(lecturers, 'Python')))
+print('Средняя оценка всех студентов за курс Python: {}'.format(average_grade_stu(students, 'Python')))
+print('Средняя оценка всех лекторов за курс Python: {}'.format(average_grade_lec(lecturers, 'Python')))
